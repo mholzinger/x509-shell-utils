@@ -43,6 +43,7 @@ Key hash: d39cf6b9b28778666006a41d712fb296
 </pre>
 
 **CSR: Display all certificate signing requests - subject, signature algorithm, modulus md5 sum (recursive)**
+
 ```
 for CSR in $(grep -lrs '\-BEGIN CERTIFICATE REQUEST\-' .);do echo; echo "CSR:" $CSR; CERTV=$(openssl req -text -noout -in $CSR);echo -n "Subject: ";echo "$CERTV"|grep -i [S]ubject:|cut -d ':' -f 2;echo "$CERTV"|grep -i [S]ignature\ [A]lgorithm|head -1|awk '{gsub(/^ +| +$/,"")}1';echo -n "CSR hash: ";openssl req -noout -modulus -in $CSR|openssl md5|awk '{print $2}';done
 ```

@@ -1,4 +1,4 @@
 *.key
 *.csr
 *.crt
-
+openssl.cnf
