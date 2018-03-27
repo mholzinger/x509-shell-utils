@@ -63,3 +63,6 @@ CSR hash: 85c4dc0fdcf551dea9da8759bbb2fe94
 HOST=google.com
 openssl s_client -connect $HOST:443 </dev/null 2>/dev/null| sed -n '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p'
 ```
+
+
+**Kilroy was here oOo**
